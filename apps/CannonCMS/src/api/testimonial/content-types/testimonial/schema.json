@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "testimonyID": {
+      "type": "uid"
+    },
+    "testimonyText": {
+      "type": "text"
+    },
+    "testimonial_author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::testimonial-author.testimonial-author"
+    },
+    "rating": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nav_sections",
+  "info": {
+    "singularName": "nav-section",
+    "pluralName": "nav-sections",
+    "displayName": "navSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "uid",
+      "targetField": "desktopTitle"
+    },
+    "desktopTitle": {
+      "type": "string",
+      "required": true
+    },
+    "mobileTitle": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

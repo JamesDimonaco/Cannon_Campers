@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "introductions",
+  "info": {
+    "singularName": "introduction",
+    "pluralName": "introductions",
+    "displayName": "Introduction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "paragraph2": {
+      "type": "text"
+    },
+    "paragraph3": {
+      "type": "text"
+    },
+    "paragraph4": {
+      "type": "text"
+    },
+    "list": {
+      "type": "json"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "linkHref": {
+      "type": "string"
+    }
+  }
+}
