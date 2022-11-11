@@ -10,7 +10,7 @@ import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
 import { Screencasts } from '@/components/Screencasts'
-import { TableOfContents } from '@/components/TableOfContents'
+import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
@@ -22,7 +22,19 @@ export default function Home({res}) {
   const introductionData = res.filter((item => item[0] === "introduction"))[0][1].data
   const heroData = res.filter((item => item[0] === "hero"))[0][1].data.attributes
   const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
+  const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
 
+
+  const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
+    return {
+      id: item.id,
+      heading: item.attributes.heading,
+      point1: item.attributes.point1,
+      point2: item.attributes.point2,
+      point3: item.attributes.point3,
+    }
+  })
+  
   const formatNavBarData = navBarData.map((item) => {
     return {
       id: item.id,
@@ -31,8 +43,6 @@ export default function Home({res}) {
       href: item.attributes.href
     }
   })
-
-  console.log(formatNavBarData);
   // nav bar 
   // console.log(res.filter((item => item[0] === "introduction")));
 
@@ -50,7 +60,7 @@ export default function Home({res}) {
       <Hero data={heroData}/>
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
-      <TableOfContents />
+      <Conversations data={conversationsData} packages={conversationsPackageData}/>
       <Testimonial
         
         id="testimonial-from-tommy-stroman"
@@ -93,7 +103,7 @@ export default function Home({res}) {
 export async function getServerSideProps(context) {
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
   const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar']
+  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar', 'conversation-package']
   const res = await fetcher(url, endpoints, token)
 
   const getImage = await axios.get(`${url}/upload/files`,{

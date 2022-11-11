@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "conversation_packages",
+  "info": {
+    "singularName": "conversation-package",
+    "pluralName": "conversation-packages",
+    "displayName": "Conversions package",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "href": {
+      "type": "string"
+    },
+    "packages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::package.package"
+    }
+  }
+}
