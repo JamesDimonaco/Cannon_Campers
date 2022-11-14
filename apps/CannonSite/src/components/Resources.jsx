@@ -9,7 +9,7 @@ import videoPlayerImage from '@/images/resources/video-player.svg'
 
 const resources = [
   {
-    title: 'Figma icon templates',
+    title: 'Gallery',
     description:
       'Pefectly structured templates for quickly designing new icons at dozens of common sizes.',
     image: function FigmaImage() {
@@ -60,22 +60,19 @@ const resources = [
 export function Resources() {
   return (
     <section
-      id="resources"
+      id="gallery"
       aria-labelledby="resources-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="3" id="resources-title">
-          Resources
+          Gallery
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Tools and resources you can use to get started even faster and
-          progress even further.
+          This is where you Gallery will be
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Design assets, icon teardowns, and a community of fellow icon
-          designers where you can ask questions, get feedback, and accelerate
-          your learning.
+          Lots more images will be here, this is just a template
         </p>
       </Container>
       <Container size="lg" className="mt-16">

@@ -12,17 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heading": {
-      "type": "string"
-    },
-    "point1": {
-      "type": "text"
-    },
-    "point2": {
-      "type": "text"
-    },
-    "point3": {
-      "type": "text"
+    "packageJson": {
+      "type": "json"
     }
   }
 }
