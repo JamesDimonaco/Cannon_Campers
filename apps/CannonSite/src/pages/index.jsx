@@ -24,16 +24,17 @@ export default function Home({res}) {
   const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
   const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
 
+  console.log(conversationsData);
 
-  const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
-    return {
-      id: item.id,
-      heading: item.attributes.heading,
-      point1: item.attributes.point1,
-      point2: item.attributes.point2,
-      point3: item.attributes.point3,
-    }
-  })
+  // const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
+  //   return {
+  //     id: item.id,
+  //     heading: item.attributes.heading,
+  //     point1: item.attributes.point1,
+  //     point2: item.attributes.point2,
+  //     point3: item.attributes.point3,
+  //   }
+  // })
   
   const formatNavBarData = navBarData.map((item) => {
     return {
@@ -60,7 +61,7 @@ export default function Home({res}) {
       <Hero data={heroData}/>
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
-      <Conversations data={conversationsData} packages={conversationsPackageData}/>
+      <Conversations data={conversationsData}/>
       <Testimonial
         
         id="testimonial-from-tommy-stroman"
@@ -75,8 +76,8 @@ export default function Home({res}) {
           can create any icon I need in no time. Great resource!”
         </p>
       </Testimonial>
-      <Screencasts />
-      <Testimonial
+      {/* <Screencasts /> */}
+      {/* <Testimonial
         id="testimonial-from-gerardo-stark"
         author={{
           name: 'Gerardo Stark',
@@ -88,12 +89,12 @@ export default function Home({res}) {
           “I’ve tried to create my own icons in the past but quickly got
           frustrated and gave up. Now I sell my own custom icon sets online.”
         </p>
-      </Testimonial>
+      </Testimonial> */}
       <Resources />
-      <FreeChapters />
+      {/* <FreeChapters /> */}
       <Pricing />
       <Testimonials />
-      <Author />
+      {/* <Author /> */}
       <Footer />
     </>
   )

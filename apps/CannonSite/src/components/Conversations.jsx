@@ -28,10 +28,9 @@ const tableOfContents = {
   },
 }
 
-export function Conversations({data, packages}) {
-  console.log(packages);
+export function Conversations({data}) {
 
-  const {title, subtitle, href, paragraph} = data.attributes
+  const {title, subtitle, href, paragraph, Packages} = data.attributes
 
   return (
     <section
@@ -53,7 +52,7 @@ export function Conversations({data, packages}) {
           {({ isExpanded }) => (
             <>
               <ol role="list" className="mt-16 space-y-10 sm:space-y-16">
-                {Object.entries(tableOfContents)
+                {Object.entries(Packages)
                   .slice(0, isExpanded ? undefined : 2)
                   .map(([title, pages]) => (
                     <li key={title}>

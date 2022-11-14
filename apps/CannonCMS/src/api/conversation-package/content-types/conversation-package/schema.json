@@ -24,10 +24,8 @@
     "href": {
       "type": "string"
     },
-    "packages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::package.package"
+    "Packages": {
+      "type": "json"
     }
   }
 }
