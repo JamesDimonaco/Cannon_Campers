@@ -24,7 +24,6 @@ export default function Home({res}) {
   const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
   const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
 
-  console.log(conversationsData);
 
   // const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
   //   return {
