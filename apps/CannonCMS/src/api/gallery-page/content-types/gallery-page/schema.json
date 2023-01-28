@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gallery_pages",
+  "info": {
+    "singularName": "gallery-page",
+    "pluralName": "gallery-pages",
+    "displayName": "GalleryPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Gallery_number": {
+      "default": 0,
+      "max": 3,
+      "min": 1,
+      "required": true,
+      "unique": false,
+      "type": "integer"
+    }
+  }
+}
