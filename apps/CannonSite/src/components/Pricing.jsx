@@ -1,12 +1,13 @@
+import { Fragment, useState } from 'react'
 import clsx from 'clsx'
-
 import { Button } from '@/components/Button'
 import { CheckIcon } from '@/components/CheckIcon'
 import { Container } from '@/components/Container'
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
 
-function Plan({ name, description, price, features, href, featured }) {
+function Plan({ name, description, price, features, href, featured, buttonText }) {
+  const [loadMore, setLoadMore] = useState(false)
   return (
     <div
       className={clsx(
@@ -36,6 +37,8 @@ function Plan({ name, description, price, features, href, featured }) {
         >
           {description}
         </p>
+        <span className="order-first font-display font-bold">Prices from</span>
+
         <p className="order-first flex font-display font-bold">
           <span
             className={clsx(
@@ -43,7 +46,7 @@ function Plan({ name, description, price, features, href, featured }) {
               featured ? 'text-blue-200' : 'text-slate-500'
             )}
           >
-            $
+            £
           </span>
           <span
             className={clsx(
@@ -51,7 +54,7 @@ function Plan({ name, description, price, features, href, featured }) {
               featured ? 'text-white' : 'text-slate-900'
             )}
           >
-            {price}
+            {price.toLocaleString()}
           </span>
         </p>
         <div className="order-last mt-8">
@@ -64,17 +67,42 @@ function Plan({ name, description, price, features, href, featured }) {
                 : 'divide-slate-200 text-slate-900'
             )}
           >
-            {features.map((feature) => (
-              <li key={feature} className="flex py-2">
-                <CheckIcon
-                  className={clsx(
-                    'h-8 w-8 flex-none',
-                    featured ? 'fill-white' : 'fill-slate-600'
-                  )}
-                />
-                <span className="ml-4">{feature}</span>
-              </li>
+            {features.map((feature, i) => (
+              <Fragment>
+                {i > 3 && !loadMore ? null : (
+                  <li key={feature} className="flex py-2">
+                    <CheckIcon
+                      className={clsx(
+                        'h-8 w-8 flex-none',
+                        featured ? 'fill-white' : 'fill-slate-600'
+                      )}
+                    />
+                    <span className="ml-4">{feature}</span>
+                  </li>
+                )}
+              </Fragment>
             ))}
+            {features.length > 3 && !loadMore ? (
+              <Button
+                color={featured ? 'white' : 'slate'}
+                key="load-more"
+                type="button"
+                className="flex w-full items-center justify-center rounded-md py-2 text-sm font-medium   focus:outline-none focus-visible:ring-2  focus-visible:ring-offset-2"
+                onClick={() => setLoadMore(true)}
+              >
+                Load more
+              </Button>
+            ) : features.length > 3 && loadMore ? (
+              <Button
+                color={featured ? 'white' : 'slate'}
+                key="load-less"
+                type="button"
+                className="flex w-full items-center justify-center rounded-md py-2 text-sm font-medium   focus:outline-none focus-visible:ring-2  focus-visible:ring-offset-2"
+                onClick={() => setLoadMore(false)}
+              >
+                Load less
+              </Button>
+            ) : null}
           </ul>
         </div>
         <Button
@@ -83,7 +111,7 @@ function Plan({ name, description, price, features, href, featured }) {
           className="mt-8"
           aria-label={`Get started with the ${name} plan for $${price}`}
         >
-          Get started
+          {!buttonText ? 'Contact us' : buttonText}
         </Button>
       </div>
     </div>
@@ -112,28 +140,42 @@ export function Pricing() {
       <div className="mx-auto mt-16 max-w-5xl lg:px-6">
         <div className="grid bg-slate-50 sm:px-6 sm:pb-16 md:grid-cols-2 md:rounded-6xl md:px-8 md:pt-16 lg:p-20">
           <Plan
-            name="Essential"
+            name="Conversions"
             description="The perfect starting point if you’re on a budget."
-            price={15}
+            price={10495}
             href="#"
             features={[
               'The 240-page ebook',
               'Figma icon templates',
               'Community access',
+              'Email support',
+              '1 year of updates',
+              '1 year of updates',
+              '1 year of updates',
             ]}
           />
           <Plan
             featured
-            name="Complete"
-            description="Everything icon resource you could ever ask for."
-            price={229}
+            buttonText='See available vans'
+            name="Vans for sale"
+            description="Brand New Vans fully converted"
+            price={47995}
             href="#"
             features={[
-              'The 240-page ebook',
-              'Figma icon templates',
-              'Over an hour of screencasts',
-              'Weekly icon teardowns',
-              'Community access',
+              '16in Alloy Wheels – Clayton',
+              'ASR – Anti Slip Regulation',
+              'Anti-theft Alarm System with Interior Monitoring in Cab – Backup Horn and Towing Protection',
+              'Auto-Dimming Breakaway Interior Rearview Mirror',
+              'Automatic Headlight Activation with Daytime Running Lights – Leaving Home – Manual Coming Home Function',
+              'Cruise Control – Adaptive with Speed Limiter',
+              'ESP – Electronic Stability Programme',
+              'Front Fog Lights with Cornering Lights',
+              'Halogen Twin Headlights',
+              'Leather-Wrapped Multi-Function Steering Wheel',
+              'Manual Sliding Door Passenger Side',
+              'Parking Sensors – Front and Rear',
+              'Servotronic Speed-Sensitive Power Steering – Steering Column Adjustable in Height and Reach',
+              'Smartphone Interface',
             ]}
           />
         </div>
