@@ -16,7 +16,6 @@ import { Testimonials } from '@/components/Testimonials'
 import { Map } from '@/components/Map'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
 import avatarImage2 from '@/images/avatars/avatar-2.png'
-import axios from 'axios'
 
 export default function Home({res}) {
 

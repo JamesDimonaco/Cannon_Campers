@@ -13,12 +13,12 @@ export function Header() {
           <Link href="/" className="px-2 text-gray-500 hover:text-gray-800">
             Home
           </Link>
-          <a href="#" className="px-2 text-gray-500 hover:text-gray-800">
+          {/* <a href="#" className="px-2 text-gray-500 hover:text-gray-800">
             About
-          </a>
-          <a href="#" className="px-2 text-gray-500 hover:text-gray-800">
+          </a> */}
+          <Link href="/contact" className="px-2 text-gray-500 hover:text-gray-800">
             Contact
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

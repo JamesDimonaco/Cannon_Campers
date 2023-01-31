@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
 
-export const Map = () => {
+export const Map = ({key}) => {
   const [scriptLoaded, setScriptLoaded] = useState(false)
-
+  const mapApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   useEffect(() => {
     if (!scriptLoaded) {
       const script = document.createElement('script')
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBXF9_7-FXFFXCs8PqI_b0CL3BppaHU6Q8&libraries=places`
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&libraries=places`
       script.async = true
       script.defer = true
       script.onload = () => {

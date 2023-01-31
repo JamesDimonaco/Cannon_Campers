@@ -23,13 +23,14 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: 'sendgrid',
+      provider: 'sendgrid', // For community providers pass the full package name (e.g. provider: 'strapi-provider-email-mandrill')
       providerOptions: {
-        apikey: env('SENDGRID_API_KEY'),
+        apiKey: env('SENDGRID_API_KEY'),
       },
       settings: {
-        defaultFrom: 'contact@cannoncamperconversions.com',
-        defaultReplyTo: 'admin@cannoncamperconversions.com'
+        defaultFrom: 'admin@cannoncamperconversions.com',
+        defaultReplyTo: 'contact@cannoncamperconversions.com',
+        testAddress: 'admin@cannoncamperconversions.com',
       },
     },
   },
