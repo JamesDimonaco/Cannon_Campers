@@ -52,7 +52,7 @@ export default function Home({res}) {
     <>
       <Head>
         <title>
-          Everything Starts as a Square - Get lost in the world of icon design
+          Cannon Campers | The best camper van conversions in the UK
         </title>
         <meta
           name="description"
@@ -73,8 +73,7 @@ export default function Home({res}) {
         }}
       >
         <p>
-          “I didn’t know a thing about icon design until I read this book. Now I
-          can create any icon I need in no time. Great resource!”
+          “Testimonial can go here or it can be removed ”
         </p>
       </Testimonial>
       {/* <Screencasts /> */}
