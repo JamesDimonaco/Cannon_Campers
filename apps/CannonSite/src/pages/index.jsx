@@ -10,6 +10,7 @@ import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
 import { Screencasts } from '@/components/Screencasts'
+import { FeatureContent } from '@/components/FeatureContent'
 import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
@@ -63,6 +64,7 @@ export default function Home({res}) {
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
       <Conversations data={conversationsData}/>
+      <FeatureContent/>
       <Testimonial
         
         id="testimonial-from-tommy-stroman"

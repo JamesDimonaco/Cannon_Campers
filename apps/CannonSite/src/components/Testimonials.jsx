@@ -187,7 +187,7 @@ export function Testimonials() {
                 </li>
               ))}
             </ul>
-            <Expandable.Button>Read more testimonials</Expandable.Button>
+            <Expandable.Button>{['Read more testimonials', 'Read less testimonials']}</Expandable.Button>
           </>
         )}
       </Expandable>

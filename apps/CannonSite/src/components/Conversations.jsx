@@ -87,7 +87,7 @@ export function Conversations({data}) {
                     </li>
                   ))}
               </ol>
-              <Expandable.Button>See more</Expandable.Button>
+              <Expandable.Button>{['See more', 'See less']}</Expandable.Button>
             </>
           )}
         </Expandable>
