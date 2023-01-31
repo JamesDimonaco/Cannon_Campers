@@ -13,9 +13,9 @@ import { Screencasts } from '@/components/Screencasts'
 import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
+import { Map } from '@/components/Map'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
 import avatarImage2 from '@/images/avatars/avatar-2.png'
-import axios from 'axios'
 
 export default function Home({res}) {
 
@@ -23,6 +23,8 @@ export default function Home({res}) {
   const heroData = res.filter((item => item[0] === "hero"))[0][1].data.attributes
   const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
   const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
+  const galleryData = res.filter((item => item[0] === "gallery-pages"))[0][1].data
+
 
 
   // const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
@@ -89,10 +91,11 @@ export default function Home({res}) {
           frustrated and gave up. Now I sell my own custom icon sets online.”
         </p>
       </Testimonial> */}
-      <Resources />
+      <Resources data={galleryData} />
       {/* <FreeChapters /> */}
       <Pricing />
       <Testimonials />
+      <Map />
       {/* <Author /> */}
       <Footer />
     </>
@@ -103,14 +106,8 @@ export default function Home({res}) {
 export async function getServerSideProps(context) {
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
   const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar', 'conversation-package']
+  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar', 'conversation-package', 'gallery-pages']
   const res = await fetcher(url, endpoints, token)
-
-  const getImage = await axios.get(`${url}/upload/files`,{
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  })
 
 
   return {
