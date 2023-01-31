@@ -52,7 +52,7 @@ export default function Home({res}) {
     <>
       <Head>
         <title>
-          Everything Starts as a Square - Get lost in the world of icon design
+          Cannon Campers | The best camper van conversions in the UK
         </title>
         <meta
           name="description"
