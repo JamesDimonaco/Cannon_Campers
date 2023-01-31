@@ -38,10 +38,10 @@ export const Map = ({key}) => {
           Visit us
         </SectionHeading>
         <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-          Come to our yard in Crickhoewell
+          Come to our yard in Crickhowell
         </p>
         <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
-          Things to do near Crickhoewell
+          Things to do near Crickhowell
         </p>
       </Container>
       <div  id="map" style={{ height: '400px', width: '100%' }} />
