@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import fetcher from 'lib/fetcher';
 export default function GalleryPage({res}) {
   const [isOpen, setIsOpen] = useState(false)
-
+console.log(res[0][1], 'res')
 
   return (
     <Fragment>
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 
     const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
     const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-    const endpoints = [`gallery-pages/${params.gallery}`]
+    const endpoints = [`gallery-pages/${params.gallery}?populate=*`]
     const res = await fetcher(url, endpoints, token)
 
   return {

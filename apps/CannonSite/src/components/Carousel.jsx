@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 
 import { FeatureContent } from "./FeatureContent";
 import {ArrowRightCircleIcon, ArrowLeftCircleIcon} from "@heroicons/react/24/outline";
@@ -46,7 +45,7 @@ export const Carousel = ({data}) => {
                 key={index}
                 title={item.title}
                 description={item.description}
-                image={item.image}
+                image={item.image.data.attributes.url}
             />);
 
             components.push(element);

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_converions_features",
+  "info": {
+    "displayName": "features"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "featureText": {
+      "type": "text"
+    }
+  }
+}
