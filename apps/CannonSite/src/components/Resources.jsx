@@ -8,7 +8,6 @@ import figmaImage from '@/images/resources/figma.svg'
 import videoPlayerImage from '@/images/resources/video-player.svg'
 
 export function Resources({ data }) {
-  console.log(data[0].attributes)
   return (
     <section
       id="galleries"

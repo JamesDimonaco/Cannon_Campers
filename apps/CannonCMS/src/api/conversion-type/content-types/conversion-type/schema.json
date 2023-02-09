@@ -34,11 +34,6 @@
     },
     "href": {
       "type": "string"
-    },
-    "Carousel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "carousel.carousel"
     }
   }
 }

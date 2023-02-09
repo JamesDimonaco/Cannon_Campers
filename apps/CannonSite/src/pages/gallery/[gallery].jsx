@@ -39,7 +39,6 @@ export async function getStaticPaths(context) {
   const endpoints = ['gallery-pages']
   const res = await fetcher(url, endpoints, token)
 
-//   console.log(res[0][1].data, 'res');
   const paths = res[0][1].data.map((gallery) => ({
     params: { gallery: gallery.attributes.Gallery_number.toString()},
   }))

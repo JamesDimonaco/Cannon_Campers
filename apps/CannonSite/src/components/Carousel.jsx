@@ -34,7 +34,7 @@ export const Carousel = ({data}) => {
         nextArrow: <ArrowRightCircleIcon />,
         prevArrow: <ArrowLeftCircleIcon />,
         autoplaySpeed: autoPlayInterval,
-        autoplay: autoPlay,
+        autoplay: false,
       };
 
     const getComponentsToRender = () => {
