@@ -70,7 +70,7 @@ function Plan({ name, description, price, features, href, featured, buttonText }
             {features.map((feature, i) => (
               <Fragment>
                 {i > 3 && !loadMore ? null : (
-                  <li key={feature} className="flex py-2">
+                  <li key={i} className="flex py-2">
                     <CheckIcon
                       className={clsx(
                         'h-8 w-8 flex-none',

@@ -9,7 +9,7 @@ import Slider from "react-slick";
 export const Carousel = ({data}) => {
     console.log(data, 'carousel');
     const [componentsToRender, setComponentsToRender] = useState([])
-    const { autoPlay, content, autoPlayIntervalInSeconds } = data;
+    const { autoPlay, conversions, autoPlayIntervalInSeconds } = data.attributes;
     const DEFAULT_AUTOPLAY_INTERVAL = 30 * 1000;
     const autoPlayInterval = !autoPlayIntervalInSeconds ? DEFAULT_AUTOPLAY_INTERVAL : autoPlayIntervalInSeconds * 1000;
 
@@ -34,13 +34,13 @@ export const Carousel = ({data}) => {
         nextArrow: <ArrowRightCircleIcon />,
         prevArrow: <ArrowLeftCircleIcon />,
         autoplaySpeed: autoPlayInterval,
-        autoplay: false,
+        autoplay: autoPlay,
       };
 
     const getComponentsToRender = () => {
         let components = [];
 
-         content.map((item, index) => {
+         conversions.map((item, index) => {
             let element = (
             <FeatureContent
                 key={index}

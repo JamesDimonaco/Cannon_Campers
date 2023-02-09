@@ -21,26 +21,53 @@ import avatarImage2 from '@/images/avatars/avatar-2.png'
 
 export default function Home({res}) {
 
-  const introductionData = res.filter((item => item[0] === "introduction"))[0][1].data
-  const heroData = res.filter((item => item[0] === "hero"))[0][1].data.attributes
-  const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
-  const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
-  const galleryData = res.filter((item => item[0] === "gallery-pages"))[0][1].data
+   console.log(res, 'res');
+   const introductionData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "introduction";
+  }))[0][1].data;
+  const heroData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "hero";
+  }))[0][1].data.attributes
+  const navBarData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "nav-bar";
+  }))[0][1].data.attributes.nav_sections.data
+  const conversationsData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "conversation-package";
+  }))[0][1].data
+  const galleryData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "gallery-pages";
+  }))[0][1].data
 
 
-  const CarouselData = {autoplay: true, autoPlayIntervalInSeconds: 30, content: [{
-    title: "Test",
-    description: "Test",
-  },
-  {
-    title: "Test2",
-    description: "Test2",
-  },
-  {
-    title: "Test3",
-    description: "Test3",
-  }
-] }
+const carouselData = res.filter((item => {
+  let arr = item[0].split("?");
+  arr.splice(1, arr.length - 1);
+  return arr[0] === "carousel-homepage";
+}))[0][1].data
+
+  // const CarouselData = {autoplay: true, autoPlayIntervalInSeconds: 30, content: [{
+  //   title: "Test",
+  //   description: "Test",
+  // },
+  // {
+  //   title: "Test2",
+  //   description: "Test2",
+  // },
+  // {
+  //   title: "Test3",
+  //   description: "Test3",
+  // }
+// ] }
 
 
 
@@ -54,6 +81,8 @@ export default function Home({res}) {
   //   }
   // })
   
+
+
   const formatNavBarData = navBarData.map((item) => {
     return {
       id: item.id,
@@ -62,6 +91,9 @@ export default function Home({res}) {
       href: item.attributes.href
     }
   })
+
+
+
   // nav bar 
   // console.log(res.filter((item => item[0] === "introduction")));
 
@@ -80,8 +112,7 @@ export default function Home({res}) {
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
       <Conversations data={conversationsData}/>
-      {/* <FeatureContent/> */}
-      <Carousel data={CarouselData} />
+      <Carousel data={carouselData} />
       <Testimonial
         
         id="testimonial-from-tommy-stroman"
@@ -109,8 +140,16 @@ export default function Home({res}) {
           frustrated and gave up. Now I sell my own custom icon sets online.”
         </p>
       </Testimonial> */}
+
+
       <Resources data={galleryData} />
+
+
+
+
       {/* <FreeChapters /> */}
+
+
       <Pricing />
       <Testimonials />
       <Map />
@@ -124,7 +163,7 @@ export default function Home({res}) {
 export async function getServerSideProps(context) {
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
   const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar', 'conversation-package', 'gallery-pages']
+  const endpoints = ['testimonials?populate=*', 'introduction?populate=*', 'hero?populate=*', 'nav-bar?populate=*', 'conversation-package?populate=*', 'gallery-pages?populate=*', 'carousel-homepage?populate=deep']
   const res = await fetcher(url, endpoints, token)
 
 

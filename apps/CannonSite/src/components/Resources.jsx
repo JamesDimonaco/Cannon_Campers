@@ -31,7 +31,7 @@ export function Resources({ data }) {
           className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
         >
           {data.map((resource) => (
-            <Link href={`/gallery/${resource.attributes.Gallery_number}`}>
+            <Link key={resource.id} href={`/gallery/${resource.attributes.Gallery_number}`}>
               <li
                 key={resource.id}
                 className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
