@@ -28,9 +28,8 @@ const tableOfContents = {
   },
 }
 
-export function Conversations({data}) {
-
-  const {title, subtitle, href, paragraph, Packages} = data.attributes
+export function Conversations({ data }) {
+  const { title, subtitle, href, paragraph, Packages } = data.attributes
 
   return (
     <section

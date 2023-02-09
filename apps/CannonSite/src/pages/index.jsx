@@ -11,6 +11,7 @@ import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
 import { Screencasts } from '@/components/Screencasts'
 import { FeatureContent } from '@/components/FeatureContent'
+import { Carousel } from '@/components/Carousel'
 import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
@@ -25,6 +26,21 @@ export default function Home({res}) {
   const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
   const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
   const galleryData = res.filter((item => item[0] === "gallery-pages"))[0][1].data
+
+
+  const CarouselData = {autoplay: true, autoPlayIntervalInSeconds: 30, content: [{
+    title: "Test",
+    description: "Test",
+  },
+  {
+    title: "Test2",
+    description: "Test2",
+  },
+  {
+    title: "Test3",
+    description: "Test3",
+  }
+] }
 
 
 
@@ -64,7 +80,8 @@ export default function Home({res}) {
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
       <Conversations data={conversationsData}/>
-      <FeatureContent/>
+      {/* <FeatureContent/> */}
+      <Carousel data={CarouselData} />
       <Testimonial
         
         id="testimonial-from-tommy-stroman"
