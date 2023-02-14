@@ -1,25 +1,7 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
-const features = [
-  {
-    name: 'Push to deploy.',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
-  },
-  {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ServerIcon,
-  },
-]
 
-export function FeatureContent({ description, image, title, key}) {
+export function FeatureContent({ description, image, title, key, features}) {
   return (
     <div key={key} className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -33,12 +15,11 @@ export function FeatureContent({ description, image, title, key}) {
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
+                  <div key={feature.title} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900">
-                      {/* <feature.icon className="absolute top-1 left-1 h-5 w-5 text-indigo-600" aria-hidden="true" /> */}
-                      {feature.name}
+                      {feature.title}
                     </dt>{' '}
-                    <dd className="inline">{feature.description}</dd>
+                    <dd className="inline">{feature.featureText}</dd>
                   </div>
                 ))}
               </dl>

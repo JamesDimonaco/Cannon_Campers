@@ -42,6 +42,7 @@ export const Carousel = ({data}) => {
          conversions.map((item, index) => {
             let element = (
             <FeatureContent
+                features={item.features}
                 key={index}
                 title={item.title}
                 description={item.description}
