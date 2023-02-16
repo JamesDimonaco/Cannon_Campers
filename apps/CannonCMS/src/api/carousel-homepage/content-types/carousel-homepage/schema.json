@@ -22,6 +22,9 @@
       "type": "component",
       "repeatable": true,
       "component": "converions.conversion-type"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

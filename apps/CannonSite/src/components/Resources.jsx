@@ -15,7 +15,7 @@ export function Resources({ data }) {
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="3" id="resources-title">
+        <SectionHeading number="2" id="resources-title">
           Galleries
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">

@@ -1,23 +1,18 @@
 import Head from 'next/head'
 
 import fetcher from 'lib/fetcher'
-import { Author } from '@/components/Author'
 import { Footer } from '@/components/Footer'
-import { FreeChapters } from '@/components/FreeChapters'
 import { Hero } from '@/components/Hero'
 import { Introduction } from '@/components/Introduction'
 import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
-import { Screencasts } from '@/components/Screencasts'
-import { FeatureContent } from '@/components/FeatureContent'
 import { Carousel } from '@/components/Carousel'
 import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import { Map } from '@/components/Map'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
-import avatarImage2 from '@/images/avatars/avatar-2.png'
 
 export default function Home({res}) {
 
@@ -55,32 +50,8 @@ const carouselData = res.filter((item => {
   return arr[0] === "carousel-homepage";
 }))[0][1].data
 
-  // const CarouselData = {autoplay: true, autoPlayIntervalInSeconds: 30, content: [{
-  //   title: "Test",
-  //   description: "Test",
-  // },
-  // {
-  //   title: "Test2",
-  //   description: "Test2",
-  // },
-  // {
-  //   title: "Test3",
-  //   description: "Test3",
-  // }
-// ] }
 
 
-
-  // const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
-  //   return {
-  //     id: item.id,
-  //     heading: item.attributes.heading,
-  //     point1: item.attributes.point1,
-  //     point2: item.attributes.point2,
-  //     point3: item.attributes.point3,
-  //   }
-  // })
-  
 
 
   const formatNavBarData = navBarData.map((item) => {
@@ -92,10 +63,6 @@ const carouselData = res.filter((item => {
     }
   })
 
-
-
-  // nav bar 
-  // console.log(res.filter((item => item[0] === "introduction")));
 
   return (
     <>
@@ -111,7 +78,8 @@ const carouselData = res.filter((item => {
       <Hero data={heroData}/>
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
-      <Conversations data={conversationsData}/>
+      {/* <Conversations data={conversationsData}/> */}
+
       <Carousel data={carouselData} />
       <Testimonial
         
@@ -147,13 +115,11 @@ const carouselData = res.filter((item => {
 
 
 
-      {/* <FreeChapters /> */}
 
 
       <Pricing />
       <Testimonials />
       <Map />
-      {/* <Author /> */}
       <Footer />
     </>
   )
