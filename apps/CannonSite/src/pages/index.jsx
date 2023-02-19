@@ -13,6 +13,7 @@ import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import { Map } from '@/components/Map'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
+import { Header } from '@/components/Header'
 
 export default function Home({res}) {
 
@@ -75,10 +76,10 @@ const carouselData = res.filter((item => {
           content="A book and video course that teaches you how to design your own icons from scratch. "
         />
       </Head>
+      <Header/>
       <Hero data={heroData}/>
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
-      {/* <Conversations data={conversationsData}/> */}
 
       <Carousel data={carouselData} />
       <Testimonial

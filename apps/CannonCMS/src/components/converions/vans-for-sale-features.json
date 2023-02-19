@@ -10,8 +10,10 @@
     "title": {
       "type": "string"
     },
-    "feature": {
-      "type": "richtext"
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "converions.feature-list"
     }
   }
 }

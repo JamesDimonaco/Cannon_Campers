@@ -3,40 +3,6 @@ import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
-const sections = [
-  {
-    id: 'table-of-contents',
-    title: (
-      <>
-        <span className="hidden lg:inline">Table of contents</span>
-        <span className="lg:hidden">Contents</span>
-      </>
-    ),
-  },
-  { id: 'screencasts', title: 'Screencasts' },
-  { id: 'resources', title: 'Resources' },
-  { id: 'pricing', title: 'Pricing' },
-  { id: 'author', title: 'Author' },
-]
-
-function MenuIcon({ open, ...props }) {
-  return (
-    <svg
-      aria-hidden="true"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path
-        d={open ? 'M17 7 7 17M7 7l10 10' : 'm15 16-3 3-3-3M15 8l-3-3-3 3'}
-      />
-    </svg>
-  )
-}
-
 export function NavBar({data}) {
   let navBarRef = useRef()
   let [activeIndex, setActiveIndex] = useState(null)
@@ -80,7 +46,7 @@ export function NavBar({data}) {
   }, [])
 
   return (
-    <div ref={navBarRef} className="sticky top-0 z-50">
+    <div ref={navBarRef} className="sticky top-16 z-50 drop-shadow-md">
       <Popover className="sm:hidden">
         {({ open }) => (
           <>
@@ -117,7 +83,6 @@ export function NavBar({data}) {
                     <span className="absolute inset-0" />
                   </>
                 )}
-                <MenuIcon open={open} className="h-6 w-6 stroke-slate-700" />
               </Popover.Button>
             </div>
             <Popover.Panel className="absolute inset-x-0 top-0 bg-white/95 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur">

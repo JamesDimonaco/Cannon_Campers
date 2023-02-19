@@ -26,6 +26,9 @@
   "devDependencies": {
     "esbuild-linux-64" : "^0.15.18",
     "@heroicons/react": "^2.0.14",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.9",
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.2"
   }

@@ -6,7 +6,6 @@ let data = [];
 const dataPromise = new Promise ((resolve, reject) => {
 endpoints.forEach(async (des, i) => {
     console.log(des);
-    console.log(des + '?populate=*' + ' test');
     const uri = url + '/' + des;
     
     

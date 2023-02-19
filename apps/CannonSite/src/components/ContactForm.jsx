@@ -69,7 +69,7 @@ export function ContactForm() {
   return (
     <Fragment>
       <Toast show={showToast} setShow={(e) => setShowToast(e) } message={toastMessage} type={toastType} />
-      <div className='flex justify-center content-center'>
+      <div className='flex justify-center content-center py-16'>
       <form className="rounded-lg bg-white p-6 w-1/3" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label
