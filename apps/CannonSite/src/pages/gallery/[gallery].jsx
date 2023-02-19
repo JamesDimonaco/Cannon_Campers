@@ -16,7 +16,6 @@ console.log(res[0][1], 'res')
       <Gallery open={isOpen} setOpen={(e) => setIsOpen(e)} images={res[0][1].data.attributes.Images.data} />
     </div>
     <Footer/>
-    <h1>2</h1>
     </Fragment>
   )
 }

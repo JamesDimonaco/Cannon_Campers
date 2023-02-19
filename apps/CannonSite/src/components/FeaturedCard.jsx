@@ -4,39 +4,6 @@ import { Disclosure, RadioGroup, Tab } from '@headlessui/react'
 import { HeartIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { currencyFormatter } from '../../lib/currencyFormatter'
 
-const product = {
-  name: 'Zip Tote Basket',
-  price: '$140',
-  rating: 4,
-  images: [
-    {
-      id: 1,
-      name: 'Angled view',
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg',
-      alt: 'Angled front view with bag zipped and handles upright.',
-    },
-    // More images...
-  ],
-  description: `
-    <p>The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.</p>
-  `,
-  details: [
-    {
-      name: 'Features',
-      items: [
-        'Multiple strap configurations',
-        'Spacious interior with top zip',
-        'Leather handle and tabs',
-        'Interior dividers',
-        'Stainless strap loops',
-        'Double stitched construction',
-        'Water-resistant',
-      ],
-    },
-    // More sections...
-  ],
-}
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -155,9 +122,9 @@ export function FeaturedCard({van}) {
                         </h3>
                         <Disclosure.Panel as="div" className="prose prose-sm pb-6">
                           <ul role="list">
-                            {/* {detail.items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))} */}
+                            {detail.list.map((item) => (
+                              <li key={item.id}>{item.featureList}</li>
+                            ))}
                             {detail.feature}
                           </ul>
                         </Disclosure.Panel>
