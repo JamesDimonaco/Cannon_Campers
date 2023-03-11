@@ -29,14 +29,6 @@
         "videos",
         "audios"
       ]
-    },
-    "Gallery_number": {
-      "default": 0,
-      "max": 3,
-      "min": 1,
-      "required": true,
-      "unique": false,
-      "type": "integer"
     }
   }
 }

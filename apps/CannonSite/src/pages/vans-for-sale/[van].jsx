@@ -6,7 +6,6 @@ import { FeaturedCard } from '@/components/FeaturedCard';
 import fetcher from 'lib/fetcher';
 
 export default function VanPage({data}) {
-    console.log(data);
 
     const formatVanData = (van) => {
         const {title, price, frontImage, images, colors, description, features} = van

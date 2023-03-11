@@ -17,7 +17,6 @@ import { Header } from '@/components/Header'
 
 export default function Home({res}) {
 
-   console.log(res, 'res');
    const introductionData = res.filter((item => {
     let arr = item[0].split("?");
     arr.splice(1, arr.length - 1);
@@ -33,11 +32,6 @@ export default function Home({res}) {
     arr.splice(1, arr.length - 1);
     return arr[0] === "nav-bar";
   }))[0][1].data.attributes.nav_sections.data
-  const conversationsData = res.filter((item => {
-    let arr = item[0].split("?");
-    arr.splice(1, arr.length - 1);
-    return arr[0] === "conversation-package";
-  }))[0][1].data
   const galleryData = res.filter((item => {
     let arr = item[0].split("?");
     arr.splice(1, arr.length - 1);
@@ -95,27 +89,7 @@ const carouselData = res.filter((item => {
           “Testimonial can go here or it can be removed ”
         </p>
       </Testimonial>
-      {/* <Screencasts /> */}
-      {/* <Testimonial
-        id="testimonial-from-gerardo-stark"
-        author={{
-          name: 'Gerardo Stark',
-          role: 'Creator of Pandemicons',
-          image: avatarImage2,
-        }}
-      >
-        <p>
-          “I’ve tried to create my own icons in the past but quickly got
-          frustrated and gave up. Now I sell my own custom icon sets online.”
-        </p>
-      </Testimonial> */}
-
-
       <Resources data={galleryData} />
-
-
-
-
 
 
       <Pricing />
@@ -130,7 +104,7 @@ const carouselData = res.filter((item => {
 export async function getServerSideProps(context) {
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
   const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const endpoints = ['testimonials?populate=*', 'introduction?populate=*', 'hero?populate=*', 'nav-bar?populate=*', 'conversation-package?populate=*', 'gallery-pages?populate=*', 'carousel-homepage?populate=deep']
+  const endpoints = ['testimonials?populate=*', 'introduction?populate=*', 'hero?populate=*', 'nav-bar?populate=*', 'gallery-pages?populate=*', 'carousel-homepage?populate=deep']
   const res = await fetcher(url, endpoints, token)
 
 
