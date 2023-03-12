@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conversion_types",
+  "info": {
+    "singularName": "conversion-type",
+    "pluralName": "conversion-types",
+    "displayName": "Conversion Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "conversionText": {
+      "type": "richtext"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

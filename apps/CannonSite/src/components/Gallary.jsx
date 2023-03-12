@@ -14,7 +14,7 @@ export const Gallery = ({ images, setOpen, open }) => {
   }
   return (
     <Fragment>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5 py-20">
         {images.map((image) => (
           <Image
             width={200}
@@ -27,7 +27,7 @@ export const Gallery = ({ images, setOpen, open }) => {
         ))}
       </div>
       {open && (
-        <div className="fixed top-0 left-0 h-full w-full bg-black bg-opacity-75"
+        <div className="fixed top-0 left-0 h-full w-full bg-black bg-opacity-75 z-10"
         onClick={handleCloseModal}
         >
           <div className="flex justify-center align-middle h-screen">

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_converions_feature_lists",
+  "info": {
+    "displayName": "feature List",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "featureList": {
+      "type": "text"
+    }
+  }
+}

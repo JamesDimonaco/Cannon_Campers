@@ -5,7 +5,11 @@ const fetcher = async (url: string, endpoints: string[], token: string) => {
 let data = [];
 const dataPromise = new Promise ((resolve, reject) => {
 endpoints.forEach(async (des, i) => {
-  const res = await axios.get(`${url}/${des}?populate=*`, {
+    console.log(des);
+    const uri = url + '/' + des;
+    
+    
+  const res = await axios.get(uri, {
         headers: {
             Authorization: `Bearer ${token}`
         }

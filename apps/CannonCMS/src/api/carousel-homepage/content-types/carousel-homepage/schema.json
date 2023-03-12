@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "carousel_homepages",
+  "info": {
+    "singularName": "carousel-homepage",
+    "pluralName": "carousel-homepages",
+    "displayName": "Carousel homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "autoPlay": {
+      "type": "boolean"
+    },
+    "autoPlayIntervalInSeconds": {
+      "type": "integer"
+    },
+    "conversions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "converions.conversion-type"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

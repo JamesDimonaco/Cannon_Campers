@@ -8,7 +8,6 @@ import figmaImage from '@/images/resources/figma.svg'
 import videoPlayerImage from '@/images/resources/video-player.svg'
 
 export function Resources({ data }) {
-  console.log(data[0].attributes)
   return (
     <section
       id="galleries"
@@ -16,7 +15,7 @@ export function Resources({ data }) {
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="3" id="resources-title">
+        <SectionHeading number="2" id="resources-title">
           Galleries
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
@@ -32,7 +31,7 @@ export function Resources({ data }) {
           className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
         >
           {data.map((resource) => (
-            <Link href={`/gallery/${resource.attributes.Gallery_number}`}>
+            <Link key={resource.id} href={`/gallery/${resource.id}`}>
               <li
                 key={resource.id}
                 className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"

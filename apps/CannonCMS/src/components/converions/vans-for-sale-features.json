@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_converions_vans_for_sale_features",
+  "info": {
+    "displayName": "Vans for sale features",
+    "icon": "shuttle-van",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "converions.feature-list"
+    }
+  }
+}

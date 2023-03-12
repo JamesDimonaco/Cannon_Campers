@@ -70,7 +70,7 @@ function Plan({ name, description, price, features, href, featured, buttonText }
             {features.map((feature, i) => (
               <Fragment>
                 {i > 3 && !loadMore ? null : (
-                  <li key={feature} className="flex py-2">
+                  <li key={i} className="flex py-2">
                     <CheckIcon
                       className={clsx(
                         'h-8 w-8 flex-none',
@@ -126,7 +126,7 @@ export function Pricing() {
       className="scroll-mt-14 pt-16 pb-8 sm:scroll-mt-32 sm:pt-20 sm:pb-10 lg:pt-32 lg:pb-16"
     >
       <Container>
-        <SectionHeading number="4" id="pricing-title">
+        <SectionHeading number="3" id="pricing-title">
           Pricing
         </SectionHeading>
         <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -160,7 +160,7 @@ export function Pricing() {
             name="Vans for sale"
             description="Brand New Vans fully converted"
             price={47995}
-            href="#"
+            href="/vans-for-sale"
             features={[
               '16in Alloy Wheels – Clayton',
               'ASR – Anti Slip Regulation',

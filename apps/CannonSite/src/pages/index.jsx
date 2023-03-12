@@ -1,42 +1,54 @@
 import Head from 'next/head'
 
-import fetcher from 'lib/fetcher'
-import { Author } from '@/components/Author'
+import fetcher from '@/lib/fetcher'
 import { Footer } from '@/components/Footer'
-import { FreeChapters } from '@/components/FreeChapters'
 import { Hero } from '@/components/Hero'
 import { Introduction } from '@/components/Introduction'
 import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
-import { Screencasts } from '@/components/Screencasts'
+import { Carousel } from '@/components/Carousel'
 import { Conversations } from '@/components/Conversations'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import { Map } from '@/components/Map'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
-import avatarImage2 from '@/images/avatars/avatar-2.png'
+import { Header } from '@/components/Header'
 
 export default function Home({res}) {
 
-  const introductionData = res.filter((item => item[0] === "introduction"))[0][1].data
-  const heroData = res.filter((item => item[0] === "hero"))[0][1].data.attributes
-  const navBarData = res.filter((item => item[0] === "nav-bar"))[0][1].data.attributes.nav_sections.data
-  const conversationsData = res.filter((item => item[0] === "conversation-package"))[0][1].data
-  const galleryData = res.filter((item => item[0] === "gallery-pages"))[0][1].data
+   const introductionData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "introduction";
+  }))[0][1].data;
+  const heroData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "hero";
+  }))[0][1].data.attributes
+  const navBarData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "nav-bar";
+  }))[0][1].data.attributes.nav_sections.data
+  const galleryData = res.filter((item => {
+    let arr = item[0].split("?");
+    arr.splice(1, arr.length - 1);
+    return arr[0] === "gallery-pages";
+  }))[0][1].data
+
+
+const carouselData = res.filter((item => {
+  let arr = item[0].split("?");
+  arr.splice(1, arr.length - 1);
+  return arr[0] === "carousel-homepage";
+}))[0][1].data
 
 
 
-  // const conversationsPackageData = conversationsData.attributes.packages.data.map((item) => {
-  //   return {
-  //     id: item.id,
-  //     heading: item.attributes.heading,
-  //     point1: item.attributes.point1,
-  //     point2: item.attributes.point2,
-  //     point3: item.attributes.point3,
-  //   }
-  // })
-  
+
+
   const formatNavBarData = navBarData.map((item) => {
     return {
       id: item.id,
@@ -45,8 +57,7 @@ export default function Home({res}) {
       href: item.attributes.href
     }
   })
-  // nav bar 
-  // console.log(res.filter((item => item[0] === "introduction")));
+
 
   return (
     <>
@@ -59,10 +70,12 @@ export default function Home({res}) {
           content="A book and video course that teaches you how to design your own icons from scratch. "
         />
       </Head>
+      <Header/>
       <Hero data={heroData}/>
       <Introduction data={introductionData}/>
       <NavBar data={formatNavBarData} />
-      <Conversations data={conversationsData}/>
+
+      <Carousel data={carouselData} />
       <Testimonial
         
         id="testimonial-from-tommy-stroman"
@@ -76,26 +89,12 @@ export default function Home({res}) {
           “Testimonial can go here or it can be removed ”
         </p>
       </Testimonial>
-      {/* <Screencasts /> */}
-      {/* <Testimonial
-        id="testimonial-from-gerardo-stark"
-        author={{
-          name: 'Gerardo Stark',
-          role: 'Creator of Pandemicons',
-          image: avatarImage2,
-        }}
-      >
-        <p>
-          “I’ve tried to create my own icons in the past but quickly got
-          frustrated and gave up. Now I sell my own custom icon sets online.”
-        </p>
-      </Testimonial> */}
       <Resources data={galleryData} />
-      {/* <FreeChapters /> */}
+
+
       <Pricing />
       <Testimonials />
       <Map />
-      {/* <Author /> */}
       <Footer />
     </>
   )
@@ -105,7 +104,7 @@ export default function Home({res}) {
 export async function getServerSideProps(context) {
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN
   const url = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const endpoints = ['testimonials', 'introduction', 'hero', 'nav-bar', 'conversation-package', 'gallery-pages']
+  const endpoints = ['testimonials?populate=*', 'introduction?populate=*', 'hero?populate=*', 'nav-bar?populate=*', 'gallery-pages?populate=*', 'carousel-homepage?populate=deep']
   const res = await fetcher(url, endpoints, token)
 
 

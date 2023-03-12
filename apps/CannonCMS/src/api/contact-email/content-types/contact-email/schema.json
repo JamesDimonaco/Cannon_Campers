@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "firstName": {
       "type": "string"
     },
     "email": {
@@ -26,6 +26,9 @@
     },
     "message": {
       "type": "text"
+    },
+    "lastName": {
+      "type": "string"
     }
   }
 }
