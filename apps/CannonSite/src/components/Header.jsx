@@ -31,6 +31,9 @@ export function Header() {
           <Link href="/" className="px-2 text-gray-500 hover:text-gray-800">
             Home
           </Link>
+          <Link href="/news" className="px-2 text-gray-500 hover:text-gray-800">
+            News
+          </Link>
           <Link href="/contact" className="px-2 text-gray-500 hover:text-gray-800">
             Contact
           </Link>

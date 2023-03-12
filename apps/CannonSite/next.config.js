@@ -5,7 +5,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['cannon-campers-images.s3.eu-west-2.amazonaws.com', 'tailwindui.com' ],
+    domains: ['cannon-campers-images.s3.eu-west-2.amazonaws.com', 'tailwindui.com', 'via.placeholder.com' ],
     remotePatterns: [
       {
         protocol: 'http',
