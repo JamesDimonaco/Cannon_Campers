@@ -67,7 +67,7 @@ export const Carousel = ({ data }) => {
   return (
  
       <Container className={'py-24 sm:py-32'} size='lg'>
-        <SectionHeading number="1" id="carousel">
+        <SectionHeading number="1" id={data.attributes.title}>
           {data.attributes.title}
         </SectionHeading>
         <Slider {...settings}>{componentsToRender}</Slider>
