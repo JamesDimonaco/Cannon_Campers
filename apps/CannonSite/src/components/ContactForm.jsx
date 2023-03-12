@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import poster from '../../lib/poster'
+import poster from '../lib/poster'
 import Toast from './Toast'
 import { ClockIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 

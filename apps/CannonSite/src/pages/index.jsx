@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import fetcher from 'lib/fetcher'
+import fetcher from '@/lib/fetcher'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { Introduction } from '@/components/Introduction'

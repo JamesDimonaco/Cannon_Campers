@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { Disclosure, RadioGroup, Tab } from '@headlessui/react'
 import { HeartIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
-import { currencyFormatter } from '../../lib/currencyFormatter'
+import { currencyFormatter } from '../lib/currencyFormatter'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

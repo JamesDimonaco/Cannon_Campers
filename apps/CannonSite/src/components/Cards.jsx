@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { currencyFormatter } from '../../lib/currencyFormatter'
+import { currencyFormatter } from '../lib/currencyFormatter'
 
   
   

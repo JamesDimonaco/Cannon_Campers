@@ -3,7 +3,7 @@ import React, { Fragment, useState } from 'react'
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header'
 import { FeaturedCard } from '@/components/FeaturedCard';
-import fetcher from 'lib/fetcher';
+import fetcher from '@/lib/fetcher';
 
 export default function VanPage({data}) {
 

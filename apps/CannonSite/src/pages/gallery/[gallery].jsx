@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { Gallery } from '@/components/Gallary'
 import { Header } from '@/components/Header'
 import clsx from 'clsx'
-import fetcher from 'lib/fetcher';
+import fetcher from '@/lib/fetcher';
 export default function GalleryPage({res}) {
   const [isOpen, setIsOpen] = useState(false)
 console.log(res[0][1], 'res')
